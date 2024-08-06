@@ -20,3 +20,4 @@ const FinancialRecordModel = mongoose.model<FinancialRecord>(
   "FinancialRecord",
   financialRecordSchema
 );
+export default FinancialRecordModel;
