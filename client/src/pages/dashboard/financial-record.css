@@ -1,6 +1,16 @@
 /* Centered container for the app */
 .dashboard-container {
-  width: 80%;
+  width: 100%;
+  max-width: 1200px; /* Set a max width for better control */
+  margin: 0 auto;
+  padding: 50px 20px; /* Adjust padding for better spacing */
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif; /* Add a default font for better consistency */
+  background-color: #f4f7f9; /* Light background for a clean look */
 }
 
 /* General styling for headers within the app */
@@ -8,54 +18,69 @@ h1,
 h2 {
   color: #2c3e50;
   text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700; /* Ensure bold headers */
 }
 
 /* Form and list container */
 .form-container,
 .list-container {
   margin-bottom: 20px;
+  background-color: #fff; /* Add a background color for contrast */
+  padding: 20px;
+  border-radius: 8px; /* Softened corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Common class for all buttons */
 .button {
   background-color: #3498db;
-  color: #ffffff;
+  color: #fff;
   border: none;
-  padding: 8px 15px;
+  padding: 10px 20px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .button:hover {
   background-color: #2980b9;
+  transform: scale(1.05);
 }
+
 .button-delete {
-  background-color: #343cdb;
-  color: #ffffff;
+  background-color: #e74c3c;
+  color: #fff;
   border: none;
-  padding: 8px 15px;
+  padding: 10px 20px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .button-delete:hover {
-  background-color: #343cdb;
+  background-color: #c0392b;
+  transform: scale(1.05);
 }
 
 /* Common class for all input fields and selects */
 .input {
   width: 100%;
   padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  background-color: transparent;
+  margin: 5px 0 15px;
+  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
-  color: #3498db;
+  color: #2c3e50;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.input:focus {
+  border-color: #3498db;
+  outline: none;
 }
 
 /* Labels for better readability */
@@ -63,37 +88,67 @@ label {
   font-weight: 600;
   display: block;
   margin-bottom: 5px;
+  color: #2c3e50;
 }
 
+/* Table container with responsive design */
 .table-container {
-  margin: 20px;
-  overflow-x: auto; /* Enables horizontal scrolling if the table is too wide */
+  margin: 20px 0;
+  overflow-x: auto;
 }
 
+/* General table styling */
 .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px; /* Rounded corners for tables */
+  overflow: hidden; /* Ensure no overflow beyond border-radius */
 }
 
 .table th,
 .table td {
   padding: 12px 15px;
-  border: 1px solid #ddd; /* Light grey border for cells */
+  border: 1px solid #ddd;
   text-align: left;
+  vertical-align: middle;
 }
 
 .table th {
-  background-color: #3498db; /* Darker blue header background */
-  color: white;
+  background-color: #3498db;
+  color: #fff;
   font-size: 16px;
+  text-transform: uppercase;
 }
 
 .table tbody tr:nth-child(odd) {
-  background-color: #f2f2f2; /* Zebra striping for rows, light grey */
+  background-color: #f9f9f9;
 }
 
 .table tbody tr:hover {
-  background-color: #e8f4f8; /* Light blue hover effect for rows */
+  background-color: #e8f4f8;
+}
+
+/* Improved responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .button,
+  .button-delete {
+    padding: 8px 15px;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+  }
+
+  .form-container,
+  .list-container {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
 }
