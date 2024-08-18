@@ -20,10 +20,12 @@ router.get("/getAllByUserID/:userId", async (req: Request, res: Response) => {
 router.post("/", async (req: Request, res: Response) => {
   try {
     const newRecordBody = req.body;
+    console.log(newRecordBody);
     const newRecord = new FinancialRecordModel(newRecordBody);
     const savedRecord = await newRecord.save();
     res.status(200).send(savedRecord);
   } catch (err) {
+    console.log(err);
     res.status(500).send("An error occurred while retrieving records");
   }
 });
